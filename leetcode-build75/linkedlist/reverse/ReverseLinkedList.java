@@ -1,13 +1,13 @@
-class ListNode{
-    int value;
-    ListNode next;
-    ListNode(){}
-    ListNode(int value){ this.value=value; }
-    ListNode(int value, ListNode tail){ this.value=value; tail.next=this; this.next=null;}
-}
 
 public class ReverseLinkedList {
 
+    private static class ListNode{
+        int value;
+        ListNode next;
+        ListNode(){}
+        ListNode(int value){ this.value=value; }
+        ListNode(int value, ListNode tail){ this.value=value; tail.next=this; this.next=null;}
+    }
     public static void main(String[] args){
       ListNode head= fillLinkedList();
       traverse(head);
