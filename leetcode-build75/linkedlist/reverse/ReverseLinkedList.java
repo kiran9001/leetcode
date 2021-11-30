@@ -1,32 +1,13 @@
-class ListNode{
-    int value;
-    ListNode next;
-    ListNode(){}
-    ListNode(int value){ this.value=value; }
-    ListNode(int value, ListNode tail){ this.value=value; tail.next=this; this.next=null;}
-}
 
 public class ReverseLinkedList {
 
-    public static void traverse(ListNode head){
-        while(head!=null){
-            System.out.print(head.value + " ");
-            head=head.next;
-        }
+    private static class ListNode{
+        int value;
+        ListNode next;
+        ListNode(){}
+        ListNode(int value){ this.value=value; }
+        ListNode(int value, ListNode tail){ this.value=value; tail.next=this; this.next=null;}
     }
-
-    public static ListNode reverse(ListNode head){
-        ListNode current=head;
-        ListNode prev=null;
-        while(current!=null){
-            ListNode nextNode=current.next;
-            current.next=prev;
-            prev=current;
-            current=nextNode;
-        }
-        return prev;
-    }
-
     public static void main(String[] args){
       ListNode head= fillLinkedList();
       traverse(head);
@@ -49,4 +30,25 @@ public class ReverseLinkedList {
         return node1;
 
     }
+
+
+    public static void traverse(ListNode head){
+        while(head!=null){
+            System.out.print(head.value + " ");
+            head=head.next;
+        }
+    }
+
+    public static ListNode reverse(ListNode head){
+        ListNode current=head;
+        ListNode prev=null;
+        while(current!=null){
+            ListNode nextNode=current.next;
+            current.next=prev;
+            prev=current;
+            current=nextNode;
+        }
+        return prev;
+    }
+
 }
